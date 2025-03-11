@@ -1,0 +1,24 @@
+.relatedproducts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    h1 {
+        color: #171717;
+        font-size: clamp(2rem, 5vw, 4rem);
+        font-weight: 600;
+    }
+    hr {
+        width: 200px;
+        height: 6px;
+        border-radius: clamp(5px, 1vw, 10px);
+        background-color: #252525;
+    }
+    .items {
+        margin-top: clamp(30px , 10vw, 50px);
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: clamp(10px, 4vw, 30px);
+    }
+}

@@ -1,0 +1,161 @@
+.cartitems{
+    margin: 70px auto;
+    max-width: 980px;
+    hr {
+        height: 3px;
+        background-color: #e2e2e2;
+        border: 0;
+    }
+    .format-main {
+        display: grid;
+        grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr 1fr;
+        align-items: center;
+        gap: 75px;
+        padding: 20px;
+        color: #454545;
+        font-size: 18px;
+        font-weight: 600;
+    }
+    .cartitems-format {
+        display: grid;
+        grid-template-columns: 0.5fr 5fr;
+        gap: 75px;
+        font-size: 17px;
+        font-weight: 500;
+        .carticon-product-icon {
+            height: 62px;
+        }
+        > div {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 75px;
+            
+        }
+        .carticon-product-icon {
+            min-height: 100px;
+            aspect-ratio: 1/1.2;
+        }
+        .cartitems-remove-icon{
+            width: 25px;
+            margin: 0px 40px;
+            cursor: pointer;
+        }
+        .cartitems-quantity {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            button {
+                width: 20px;
+                margin: 8px;
+                padding: 2px;
+                border-color: #ccc;
+                outline: none;
+            }
+        }
+    }
+    .cartitems-down {
+        display: flex;
+        margin: 70px 0px;
+        .total {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin-right: 100px;
+            gap: 40px;
+            .total-item {
+                display: flex;
+                justify-content: space-between;
+                padding: 15px 0px;
+            }
+            button {
+                width: 262px;
+                height: 58px;
+                outline: none;
+                border: none;
+                background-color: #ff5a5a;
+                color: #fff;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+            }
+        }
+        .promocode{
+            flex: 1;
+            font-weight: 500;
+            p {
+                color: #555;
+            }
+            .promobox{
+                display: flex;
+                width: 504px;
+                margin-top: 15px;
+                padding-left: 20px;
+                height: 58px;
+                background: #eaeaea;
+                input {
+                    border: none;
+                    outline: none;
+                    background-color: transparent;
+                    font-size: 16px;
+                    height: 50px;
+                    width: 330px;
+                }
+                button{
+                    width: 170px;
+                    height: 58px;
+                    font-size: 16px;
+                    background-color: black;
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .cartitems {
+        margin: 0px 20px;
+        .format-main:not(.cartitems-format) {
+            display: none;
+        }
+        .cartitems-format {
+            padding:15px 0px 8px;
+            gap: 10px;
+            .carticon-product-icon {
+                width: 100px;
+                height: 150px;
+            }
+            > div {
+                grid-template-columns: 1fr;
+                gap: 5px;
+                
+                p.name {
+                    flex: 1;
+                    font-size: 13px;
+                    font-weight: 600;
+                }
+                .cartitems-remove-icon {
+                    justify-self: flex-end;
+                }
+            }
+            
+        }
+        .cartitems-down {
+            flex-direction: column;
+            gap: 30px;
+            .total {
+                margin-right: 0px;
+                padding: 0 10px;
+            }
+            .promocode .promobox {
+                width: 300px;
+                padding-left: 0;
+                padding-right: 10px;
+                button {
+                    height: 50px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,133 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.8rem;
+    box-shadow: 0 1px 3px 2px #ccc;
+}
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.5rem, 2vw, 2rem)
+}
+.nav-logo img {
+    width: clamp(2.5rem , 5vw, 4rem)
+}
+.nav-logo p {
+    color: #171717;
+    font-size: clamp(1.5rem, 4vw, 4rem); 
+}
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 40px;
+    color: #626262;
+    font-size: clamp(1rem, 2vw, 2rem); 
+    font-weight: bold;
+}
+
+.nav-menu li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    cursor: pointer;
+}
+.nav-menu hr {
+    border: none;
+    width: 80%;
+    height: 3px;
+    border-radius: 10px;
+    background: #ff4141;
+    transition: .5s;
+
+}
+
+.nav-login-cart {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+.nav-login-cart img {
+    width: clamp(1.7rem, 4vw, 3rem);
+    outline: none;
+    border-color: #7a7a7a;
+    border-radius: 75px;
+    color: #ff4141;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: white;
+    cursor: pointer;
+    &.menu-icon {
+        display: none;
+    }
+ }
+
+.nav-login-cart img:active {
+    color: #f3f3f3;
+}
+.cart-icon {
+    position: relative;
+    .nav-cart-count {
+        position: absolute;
+        top: -12%;
+        right: -12%;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 11px;
+        font-size: 14px;
+        color: white;
+        background-color: #ff4141;
+        z-index: 20;
+    }
+    
+}
+@media (max-width: 767px) {
+    .navbar {
+        position: relative;
+        .nav-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            flex-direction: column;
+            background-color: #f3f3f3;
+            gap: 0;
+            li {
+                padding: 20px;
+                width: 90%;
+                &:not(:last-of-type) {
+                border-bottom: 1px solid #ccc;
+                }
+                hr {
+                    width: 10%;
+                }
+                
+            }
+            &.show {
+                display: flex;
+            }
+        }
+        .nav-login-cart {
+            gap: 20px;
+            .menu-icon {
+                display: block;
+            }
+            .cart-icon {
+                .nav-cart-count {
+                    top: -25%;
+                    right: -25%;
+                }
+            }
+        }
+    }
+}
+/* @media (max-width: 767px) {
+    
+} */
